@@ -334,8 +334,8 @@ button {
 
 .web-grid {
   display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-  gap: 1rem;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.75rem;
 }
 
 .web-project {
@@ -347,7 +347,7 @@ button {
 
 .web-preview {
   display: block;
-  min-height: 240px;
+  min-height: 158px;
   overflow: hidden;
   background: var(--soft-blue);
 }
@@ -355,7 +355,7 @@ button {
 .web-preview img {
   width: 100%;
   height: 100%;
-  min-height: 240px;
+  min-height: 158px;
   object-fit: cover;
   transition: transform 420ms ease;
 }
@@ -366,7 +366,7 @@ button {
 }
 
 .garage-preview {
-  min-height: 240px;
+  min-height: 158px;
   display: flex;
   flex-direction: column;
   background:
@@ -382,7 +382,7 @@ button {
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  padding: 0.75rem 1rem;
+  padding: 0.55rem 0.7rem;
 }
 
 .garage-top span {
@@ -395,13 +395,13 @@ button {
 .garage-top strong {
   background: var(--yellow);
   color: #111;
-  padding: 0.6rem 0.8rem;
-  font-size: 0.85rem;
+  padding: 0.45rem 0.55rem;
+  font-size: 0.72rem;
 }
 
 .garage-hero {
   margin-top: auto;
-  padding: 1.25rem;
+  padding: 0.85rem;
 }
 
 .garage-hero p {
@@ -412,14 +412,14 @@ button {
 
 .garage-hero h3 {
   max-width: 620px;
-  margin-top: 1rem;
-  font-size: clamp(1.45rem, 3.2vw, 2.8rem);
+  margin-top: 0.7rem;
+  font-size: clamp(1.25rem, 2.3vw, 1.85rem);
   line-height: 0.9;
   letter-spacing: -0.04em;
 }
 
 .project-info {
-  padding: 1rem;
+  padding: 0.78rem;
 }
 
 .project-type {
@@ -431,15 +431,21 @@ button {
 }
 
 .project-info h3 {
-  margin-top: 0.4rem;
-  font-size: clamp(1.55rem, 3.2vw, 2.25rem);
+  margin-top: 0.32rem;
+  font-size: clamp(1.25rem, 2.5vw, 1.65rem);
   letter-spacing: -0.06em;
   line-height: 0.95;
 }
 
 .project-info p:not(.project-type) {
-  margin-top: 0.9rem;
+  display: -webkit-box;
+  margin-top: 0.65rem;
   color: var(--muted);
+  font-size: 0.9rem;
+  line-height: 1.42;
+  overflow: hidden;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 3;
 }
 
 .tag-list,
@@ -448,16 +454,16 @@ button {
   flex-wrap: wrap;
   gap: 0.5rem;
   list-style: none;
-  margin-top: 0.85rem;
+  margin-top: 0.7rem;
 }
 
 .tag-list li,
 .skill-strip span {
   border: 1px solid var(--line);
   border-radius: 999px;
-  padding: 0.42rem 0.7rem;
+  padding: 0.34rem 0.56rem;
   background: #fff;
-  font-size: 0.8rem;
+  font-size: 0.72rem;
   font-weight: 800;
 }
 
@@ -465,11 +471,13 @@ button {
   display: inline-flex;
   align-items: center;
   gap: 0.45rem;
-  margin-top: 0.9rem;
+  margin-top: 0.75rem;
   font-weight: 900;
 }
 
-.text-link i {
+.text-link::after {
+  content: "->";
+  display: inline-block;
   transition: transform var(--transition);
 }
 
@@ -477,7 +485,7 @@ button {
   color: var(--blue);
 }
 
-.text-link:hover i {
+.text-link:hover::after {
   transform: translateX(4px);
 }
 
@@ -685,6 +693,10 @@ button {
     grid-template-columns: 1fr;
   }
 
+  .web-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   .design-gallery {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -845,17 +857,21 @@ button {
 
   .web-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: 0.5rem;
+    gap: 0.45rem;
   }
 
   .web-preview,
   .web-preview img,
   .garage-preview {
-    min-height: 135px;
+    min-height: 98px;
   }
 
   .garage-top {
-    padding: 0.45rem 0.55rem;
+    padding: 0.36rem 0.48rem;
+  }
+
+  .garage-top span {
+    font-size: 0.72rem;
   }
 
   .garage-top strong {
@@ -863,39 +879,51 @@ button {
   }
 
   .garage-hero {
-    padding: 0.65rem;
+    padding: 0.48rem;
   }
 
   .garage-hero p {
-    font-size: 0.55rem;
+    font-size: 0.46rem;
   }
 
   .garage-hero h3 {
-    font-size: clamp(0.9rem, 5vw, 1.2rem);
+    margin-top: 0.4rem;
+    font-size: clamp(0.78rem, 4vw, 0.98rem);
   }
 
   .project-info {
-    padding: 0.65rem;
+    padding: 0.52rem;
   }
 
   .project-info h3 {
-    font-size: 1.2rem;
+    font-size: 1rem;
   }
 
   .project-info p:not(.project-type),
   .project-type,
   .text-link {
-    font-size: 0.72rem;
+    font-size: 0.66rem;
+  }
+
+  .project-info p:not(.project-type) {
+    display: none;
   }
 
   .tag-list {
-    gap: 0.25rem;
-    margin-top: 0.45rem;
+    display: none;
   }
 
   .tag-list li {
     padding: 0.24rem 0.38rem;
     font-size: 0.62rem;
+  }
+
+  .tag-list li:nth-child(n + 4) {
+    display: none;
+  }
+
+  .text-link {
+    margin-top: 0.44rem;
   }
 
   .design-gallery {
